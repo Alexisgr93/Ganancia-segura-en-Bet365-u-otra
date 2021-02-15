@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<script>
+
+	function inversion(){
+		valor = document.getElementById("txtN1").value;
+		valor1 = document.getElementById("txtN2").value;
+		valor2 = document.getElementById("txtN3").value;
+			if( valor == "" || valor1== "" || valor2== "") {
+  				alert('Completar todos los campos');
+				}	else
+   						{
+							var inv = document.getElementById('txtN1').value;
+							var P1 = document.getElementById('txtN2').value;
+							var P2 = document.getElementById('txtN3').value;
+							
+							var pSuma = Number(P1) + Number(P2);//SE PUSO NUMBER PORQUE NO LO TOMABA COMO NUMERO; LO CUAL PONIA EL SEGUNDO NUMERO AL LADO.
+							var invP = inv / pSuma;
+							
+							var C19 = invP * P1;
+							var C20 = invP * P2;
+							
+							var D19 = P2 * C19;
+							var D20 = P1 * C20;
+							
+								if( D19>inv || D20>inv){
+									var gano = D19 - inv; 
+									Gane.innerHTML = "Gano: "  + Number(gano.toFixed(2));
+									GananciaTotal.innerHTML = "Ganancia: "  + Number(D19.toFixed(2));
+									pValor1.innerHTML = "Plata en el Valor 1: "  + Number(C20.toFixed(2));
+									pValor2.innerHTML = "Plata en el Valor : "  + Number(C19.toFixed(2));
+									
+								}
+								else{
+										alert("no hay ganancia")
+									}
+							
+							
+							
+							
+							
+							
+							
+							/*var Total=+n1+TreintaDias;
+							Total = Number(Total.toFixed(2));//muestra 2 decimales
+							TotalMas30.innerHTML = "Total mas Ganancia por 30 Dias: "  +Total;*/
+      
+   						 }
+				};
+				
+				
+
+		 
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+	<fieldset>
+        <legend>Jugar seguro a 2 numeros en Bet-365</legend>
+        <br>
+        <label for="">Monto de inversion:</label>
+        <input type="text" id="txtN1">
+        <br><br>
+        <label for="">Valor 1:</label>
+        <input type="text" id="txtN2">
+        <br><br>
+        <label for="">Valor 2:</label>
+        <input type="text" id="txtN3">
+        <br><br>
+        <input type="button" onclick="inversion()" value="Calucular">
+        <br />
+        
+        
+        <p id="Gane">Gano: </p>
+        <p id="GananciaTotal">Ganancia total: </p>
+        <p id="pValor1">Plata en el Valor 1: </p>
+        <p id="pValor2">Plata en el Valor 2: </p>
+	</fieldset>
+
+
+        
+        
+
+    
+
+<!--
+<section id="faqs">
+    
+		<h2 class="mas"><input type="button" value="¿Qué es jQuery?"> </h2>
+		<div class="cerrado">
+			<p>					
+				jQuery es una librería de funciones JavaScript que puedes utilizar para desarrollar sitios web.
+			</p>
+		</div>
+  -->      	
+</section>
+<!--
+<script>
+(function(){
+window.addEventListener('load', function(){
+
+var elementosH2 = faqs.getElementsByTagName("h2");
+var nodoH2;
+for(var i=0; i<elementosH2.length;i++){
+	nodoH2 = elementosH2[i];
+	nodoH2.addEventListener("click", function(){cambiar(this)});
+}
+
+function cambiar(e) {
+		var h2 = e; // h2 es el nodoH2 actual
+		if (h2.getAttribute("class") == "mas") {
+			h2.setAttribute("class", "menos");
+		}
+		else {
+			h2.setAttribute("class", "mas");
+		}
+		if (h2.nextElementSibling.getAttribute("class") == "cerrado") {
+			h2.nextElementSibling.setAttribute("class", "abierto");
+		}
+		else {
+			h2.nextElementSibling.setAttribute("class", "cerrado");
+		}
+	}
+});
+}());
+</script>
+<style>
+  .mas{display:inline;}
+  .cerrado{display:none;}
+  </style>-->
+</body>
+
+ 
+        
+ 
+        
+</html>
